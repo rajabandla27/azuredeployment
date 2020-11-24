@@ -1,0 +1,9 @@
+FROM microsoft/aspnetcore-build
+
+WORKDIR /app
+
+COPY . .
+
+RUN dotnet build -c Release
+
+ENTRYPOINT ["dotnet", "run", "--no-launch-profile" ]
